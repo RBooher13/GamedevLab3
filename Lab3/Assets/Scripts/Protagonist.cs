@@ -14,7 +14,8 @@ public class Protagonist : MonoBehaviour
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
-
+    private ParticleSystem particleSystem;
+    
     public float runSpeed = 5f;
 
     // Start is called before the first frame update
