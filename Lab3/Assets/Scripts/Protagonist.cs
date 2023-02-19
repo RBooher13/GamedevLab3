@@ -12,12 +12,17 @@ public class Protagonist : MonoBehaviour
 
     private float moveLimiter = 0.7f;
 
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+
     public float runSpeed = 5f;
 
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -25,6 +30,17 @@ public class Protagonist : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("horizontal", horizontal);
+        if (horizontal < 0) {
+            spriteRenderer.flipX = true;
+        } if (horizontal > 0) {
+            spriteRenderer.flipX = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            print("Space!");
+            body.AddForce(new Vector2(0, runSpeed * 100));
+        }
+
     }
 
     void FixedUpdate() {
