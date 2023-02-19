@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Robot : MonoBehaviour
+public class Animal : MonoBehaviour
 
 {
     public string text;
