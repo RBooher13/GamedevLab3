@@ -78,6 +78,19 @@ public class GameManager : MonoBehaviour
         mainScreen.SetActive(false);
     }
 
+    public void LoadTutorial() {
+        print("loading Tutorial");
+        StartCoroutine(LoadYourAsyncScene("Tutorial"));
+        mainScreen.SetActive(false);
+    }
+
+    public void LoadCredits() {
+        print("loading Credits");
+        StartCoroutine(LoadYourAsyncScene("Credits"));
+        mainScreen.SetActive(false);
+    }
+
+
 
     // Start is called before the first frame update
     void Start()
