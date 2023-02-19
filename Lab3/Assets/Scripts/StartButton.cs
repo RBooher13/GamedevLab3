@@ -6,10 +6,9 @@ public class StartButton : MonoBehaviour
 
 
 {
-
-
-    public void startGame() {
-        
+public void OnButtonPress(){
+        GameManager.Instance.StartGame();
+        print("Button clicked");
     }
-    
+
 }

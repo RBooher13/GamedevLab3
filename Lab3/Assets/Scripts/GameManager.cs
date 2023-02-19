@@ -105,6 +105,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ColorLerpFunction(false, 1));
     }
     public void StartGame() {
+        print("loading SampleScene");
         StartCoroutine(LoadYourAsyncScene("SampleScene"));
         mainScreen.SetActive(false);
     }
