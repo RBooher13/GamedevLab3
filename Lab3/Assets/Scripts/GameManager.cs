@@ -54,31 +54,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    IEnumerator ColorLerpFunction(bool fadeout, float duration)
-    {
-        float time = 0;
-        raiseLower = true;
-        Image curtainImg = curtain.GetComponent<Image>();
-        Color startValue;
-        Color endValue;
-        if (fadeout) {
-            startValue = new Color(0, 0, 0, 0);
-            endValue = new Color(0, 0, 0, 1);
-        } else {
-            startValue = new Color(0, 0, 0, 1);
-            endValue = new Color(0, 0, 0, 0);
-        }
-
-        while (time < duration)
-        {
-            curtainImg.color = Color.Lerp(startValue, endValue, time / duration);
-            time += Time.deltaTime;
-            yield return null;
-        }
-        curtainImg.color = endValue;
-        raiseLower = false;
-    }
-
+    
 
      IEnumerator LoadYourAsyncScene(string scene)
      {
@@ -87,12 +63,6 @@ public class GameManager : MonoBehaviour
         // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
         // a sceneBuildIndex of 1 as shown in Build Settings.
 
-        StartCoroutine(ColorLerpFunction(true, 1));
-
-        while (raiseLower)
-        {
-            yield return null;
-        }
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene);
 
@@ -101,8 +71,6 @@ public class GameManager : MonoBehaviour
         {
             yield return null;
         }
-
-        StartCoroutine(ColorLerpFunction(false, 1));
     }
     public void StartGame() {
         print("loading SampleScene");
