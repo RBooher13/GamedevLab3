@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     public GameObject dialogBox;
     public TextMeshProUGUI dialogText;
 
-    public GameObject curtain;
     private bool raiseLower = false;
 
 

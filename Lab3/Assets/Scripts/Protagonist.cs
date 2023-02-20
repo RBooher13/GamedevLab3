@@ -24,6 +24,7 @@ public class Protagonist : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        particleSystem = GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -36,6 +37,10 @@ public class Protagonist : MonoBehaviour
             spriteRenderer.flipX = true;
         } if (horizontal > 0) {
             spriteRenderer.flipX = false;
+        } if (vertical != 0) {
+            particleSystem.Play();
+        } if (vertical == 0) {
+            particleSystem.Stop();
         }
         if (Input.GetKeyDown(KeyCode.Space)) {
             print("Space!");
