@@ -25,6 +25,7 @@ public class Protagonist : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        lineRenderer = GetComponent<LineRenderer>();
         particleSystem = GetComponent<ParticleSystem>();
     }
 
@@ -36,14 +37,10 @@ public class Protagonist : MonoBehaviour
         animator.SetFloat("horizontal", horizontal);
         if (horizontal < 0) {
             spriteRenderer.flipX = true;
-            particleSystem.Stop();
-            lineRenderer.enabled = true;
         } if (horizontal > 0) {
-            lineRenderer.enabled = false;
             spriteRenderer.flipX = false;
         } if (vertical != 0) {
             particleSystem.Play();
-            lineRenderer.enabled = false;
         } if (vertical == 0) {
             particleSystem.Stop();
         }
