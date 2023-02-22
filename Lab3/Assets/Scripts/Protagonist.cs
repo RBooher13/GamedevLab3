@@ -15,7 +15,8 @@ public class Protagonist : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private ParticleSystem particleSystem;
-    
+    private LineRenderer lineRenderer;
+
     public float runSpeed = 5f;
 
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class Protagonist : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        particleSystem = GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -34,8 +36,16 @@ public class Protagonist : MonoBehaviour
         animator.SetFloat("horizontal", horizontal);
         if (horizontal < 0) {
             spriteRenderer.flipX = true;
+            particleSystem.Stop();
+            lineRenderer.enabled = true;
         } if (horizontal > 0) {
+            lineRenderer.enabled = false;
             spriteRenderer.flipX = false;
+        } if (vertical != 0) {
+            particleSystem.Play();
+            lineRenderer.enabled = false;
+        } if (vertical == 0) {
+            particleSystem.Stop();
         }
         if (Input.GetKeyDown(KeyCode.Space)) {
             print("Space!");
