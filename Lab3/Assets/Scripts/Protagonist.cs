@@ -25,7 +25,10 @@ public class Protagonist : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+<<<<<<< HEAD
         lineRenderer = GetComponent<LineRenderer>();
+=======
+>>>>>>> main
         particleSystem = GetComponent<ParticleSystem>();
     }
 
