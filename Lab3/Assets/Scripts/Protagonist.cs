@@ -15,7 +15,8 @@ public class Protagonist : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private ParticleSystem particleSystem;
-    
+    private LineRenderer lineRenderer;
+
     public float runSpeed = 5f;
 
     // Start is called before the first frame update
@@ -24,6 +25,10 @@ public class Protagonist : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+<<<<<<< HEAD
+        lineRenderer = GetComponent<LineRenderer>();
+=======
+>>>>>>> main
         particleSystem = GetComponent<ParticleSystem>();
     }
 

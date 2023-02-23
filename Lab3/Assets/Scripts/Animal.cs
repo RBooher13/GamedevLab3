@@ -7,7 +7,8 @@ public class Animal : MonoBehaviour
 
 {
     public string text;
-    public AudioSource audio;
+    
+    new public AudioSource audio;
 
     public void OnTriggerEnter2D(Collider2D collider2D) {
         StartCoroutine("Beep");
