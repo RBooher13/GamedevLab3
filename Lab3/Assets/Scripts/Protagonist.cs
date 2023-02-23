@@ -42,10 +42,10 @@ public class Protagonist : MonoBehaviour
         } if (horizontal > 0) {
             spriteRenderer.flipX = false;
             trailRenderer.enabled = false;
-        } if (vertical != 0) {
             particleSystem.Play();
         } if (vertical == 0) {
             particleSystem.Stop();
+            trailRenderer.enabled = false;
         }
         if (Input.GetKeyDown(KeyCode.Space)) {
             print("Space!");
