@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7710361803351559624}
   - component: {fileID: -5306285402797524979}
   - component: {fileID: -4733200392891129753}
+  - component: {fileID: 7470233720805275046}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Untagged
@@ -254,3 +255,24 @@ PolygonCollider2D:
       - {x: -2.1875, y: -4.125}
       - {x: -1.75, y: -2.0625}
       - {x: -1.8125, y: -3.5625}
+--- !u!50 &7470233720805275046
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727187116965867346}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
