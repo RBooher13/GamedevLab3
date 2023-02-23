@@ -15,7 +15,7 @@ public class Protagonist : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private ParticleSystem particleSystem;
-    private LineRenderer lineRenderer;
+    private TrailRenderer trailRenderer;
 
     public float runSpeed = 5f;
 
@@ -25,7 +25,7 @@ public class Protagonist : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        lineRenderer = GetComponent<LineRenderer>();
+        trailRenderer = GetComponent<TrailRenderer>();
         particleSystem = GetComponent<ParticleSystem>();
     }
 
@@ -37,8 +37,11 @@ public class Protagonist : MonoBehaviour
         animator.SetFloat("horizontal", horizontal);
         if (horizontal < 0) {
             spriteRenderer.flipX = true;
+            particleSystem.Stop();
+            trailRenderer.enabled = true;
         } if (horizontal > 0) {
             spriteRenderer.flipX = false;
+            trailRenderer.enabled = false;
         } if (vertical != 0) {
             particleSystem.Play();
         } if (vertical == 0) {
